@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "jsx": "react",
+    "paths": {
+      "@api": ["./app/api/index"],
+      "@api/*": ["./app/api/*"],
+      "@actions": ["./app/redux/actions/index"],
+      "@actions/*": ["./app/redux/actions/*"],
+      "@contexts": ["./app/contexts/index"],
+      "@contexts/*": ["./app/contexts/*"],
+      "@components": ["./app/components/index"],
+      "@components/*": ["./app/components/*"],
+      "@containers": ["./app/containers/index"],
+      "@containers/*": ["./app/containers/*"],
+      "@hooks": ["./app/hooks/index"],
+      "@hooks/*": ["./app/hooks/*"],
+      "@utils": ["./app/utils/index"],
+      "@utils/*": ["./app/utils/*"],
+      "@contract/*": ["./app/contract/abi/*"],
+      "@/*": ["./app/*"]
+    }
+  },
+  "exclude": ["node_modules", "build"]
+}

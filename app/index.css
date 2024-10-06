@@ -1,0 +1,551 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts */
+
+ /* Poppins */
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+/* Reem Kufi */
+/* @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400..700&display=swap'); */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@layer base {
+  input,
+  select {
+    @apply focus:outline-none focus:ring-0 font-medium border-[1px] border-gray-300 px-3 py-2 text-16 leading-4;
+  }
+  select {
+    width: 100%;
+  }
+  select option {
+    @apply text-black;
+  }
+
+  ::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    color: white !important;
+    background: transparent !important;
+    transition:
+      background 50000s ease-in,
+      color 50000s ease-in;
+  }
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    appearance: none;
+    -webkit-appearance: none;
+    display: none;
+  }
+  input[type='number'] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  * {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+  }
+  html {
+    @apply overflow-x-hidden text-base leading-[1.15];
+  }
+  body {
+    background: #e1e1e1;
+  }
+  p {
+    @apply text-14 sm:text-16;
+  }
+  ::selection {
+    @apply bg-primary-100 text-white;
+  }
+  button {
+    @apply ring-0 outline-none;
+  }
+
+  /* TABLE */
+  /* table {
+    @apply border border-[#eee];
+  } */
+  thead,
+  tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  tbody {
+    overflow-x: hidden;
+    display: block;
+    overflow-y: auto;
+    @apply max-h-[300px] 3xl:max-h-[450px];
+  }
+  /* tbody tr {
+    @apply border border-transparent;
+  } */
+  tbody tr:hover {
+    @apply bg-[linear-gradient(45deg,#b77a2d,#444_125%)];
+  }
+  thead th {
+    @apply py-[14px] px-2 text-13 font-normal text-black font-semibold text-left;
+  }
+  td {
+    @apply py-2 px-2 text-12 text-white h-[55px];
+  }
+  table thead {
+    @apply bg-gradient-2 rounded-tl-10 rounded-tr-10;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btn {
+    @apply text-14 font-bold md:text-16 md:font-semibold py-3 px-3 border-none cursor-pointer transition-all duration-200 text-center;
+  }
+  .btn-primary-100 {
+    @apply bg-gradient-2 hover:bg-primary-400 text-secondary px-5 py-3;
+  }
+}
+
+/* React Pin Input Theme */
+.pincode-input-container input {
+  border-color: Theme('color.primary-100');
+  font-size: 18px;
+  font-weight: 700;
+  color: Theme('color.primary-100');
+}
+@media (max-width: 640px) {
+  .pincode-input-container input {
+    font-size: 16px;
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+/* For Scroll Bar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  width: 8px;
+  height: 8px;
+  background: #8f8f8f;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb {
+  width: 8px;
+  height: 8px;
+  border-radius: 8px;
+  @apply bg-gradient-2;
+}
+
+.page-title {
+  @apply font-bold text-20 lg:text-24 text-white;
+}
+.page-content {
+  @apply pb-5;
+}
+.page-subtitle {
+  @apply font-bold text-16 lg:text-18 text-primary-100;
+}
+
+/* Table Adjust */
+.table-wrapper {
+  @apply border border-primary-200 py-8 px-3 rounded-10;
+}
+.responsive-tbl {
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* Agents Table */
+.agents-tbl th:nth-of-type(1),
+.agents-tbl td:nth-of-type(1) {
+  width: 80px;
+  @apply pl-4;
+}
+.agents-tbl th:nth-of-type(2),
+.agents-tbl td:nth-of-type(2) {
+  width: 150px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(3),
+.agents-tbl td:nth-of-type(3) {
+  width: 175px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(4),
+.agents-tbl td:nth-of-type(4) {
+  width: 140px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(5),
+.agents-tbl td:nth-of-type(5) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(6),
+.agents-tbl td:nth-of-type(6) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(7),
+.agents-tbl td:nth-of-type(7) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(8),
+.agents-tbl td:nth-of-type(8) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(9),
+.agents-tbl td:nth-of-type(9) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(10),
+.agents-tbl td:nth-of-type(10) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(11),
+.agents-tbl td:nth-of-type(11) {
+  width: 100px;
+  @apply truncate;
+}
+.agents-tbl th:nth-of-type(12),
+.agents-tbl td:nth-of-type(12) {
+  width: 100px;
+}
+
+/* Players Table */
+.players-tbl th:nth-of-type(1),
+.players-tbl td:nth-of-type(1) {
+  width: 80px;
+  @apply pl-4;
+}
+.players-tbl th:nth-of-type(2),
+.players-tbl td:nth-of-type(2) {
+  width: 150px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(3),
+.players-tbl td:nth-of-type(3) {
+  width: 175px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(4),
+.players-tbl td:nth-of-type(4) {
+  width: 75px;
+}
+.players-tbl th:nth-of-type(5),
+.players-tbl td:nth-of-type(5) {
+  width: 100px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(6),
+.players-tbl td:nth-of-type(6) {
+  width: 140px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(7),
+.players-tbl td:nth-of-type(7) {
+  width: 100px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(8),
+.players-tbl td:nth-of-type(8) {
+  width: 100px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(9),
+.players-tbl td:nth-of-type(9) {
+  width: 100px;
+  @apply truncate;
+}
+.players-tbl th:nth-of-type(10),
+.players-tbl td:nth-of-type(10) {
+  width: 100px;
+  @apply truncate;
+}
+
+/* Turnament Table */
+.tournament-tbl th:nth-of-type(1),
+.tournament-tbl td:nth-of-type(1) {
+  width: 80px;
+  @apply pl-4 truncate;
+}
+.tournament-tbl th:nth-of-type(2),
+.tournament-tbl td:nth-of-type(2) {
+  width: 200px;
+  @apply truncate;
+}
+.tournament-tbl th:nth-of-type(3),
+.tournament-tbl td:nth-of-type(3) {
+  width: 80px;
+}
+.tournament-tbl th:nth-of-type(4),
+.tournament-tbl td:nth-of-type(4) {
+  width: 100px;
+  @apply truncate;
+}
+.tournament-tbl th:nth-of-type(5),
+.tournament-tbl td:nth-of-type(5) {
+  width: 90px;
+  @apply truncate;
+}
+/* .tournament-tbl th:nth-of-type(6),
+.tournament-tbl td:nth-of-type(6) {
+  width: 85px;
+}
+.tournament-tbl th:nth-of-type(7),
+.tournament-tbl td:nth-of-type(7) {
+  width: 100px;
+} */
+.tournament-tbl th:nth-of-type(6),
+.tournament-tbl td:nth-of-type(6) {
+  width: 140px;
+}
+.tournament-tbl th:nth-of-type(7),
+.tournament-tbl td:nth-of-type(7) {
+  width: 140px;
+}
+.tournament-tbl th:nth-of-type(8),
+.tournament-tbl td:nth-of-type(8) {
+  width: 155px;
+}
+.tournament-tbl th:nth-of-type(9),
+.tournament-tbl td:nth-of-type(9) {
+  width: 100px;
+}
+.tournament-tbl th:nth-of-type(10),
+.tournament-tbl td:nth-of-type(10) {
+  width: 150px;
+}
+.tournament-tbl th:nth-of-type(11),
+.tournament-tbl td:nth-of-type(11) {
+  width: 100px;
+}
+.tournament-tbl th:nth-of-type(12),
+.tournament-tbl td:nth-of-type(12) {
+  width: 70px;
+  @apply truncate;
+}
+
+/* Club Table */
+.club-tbl th:nth-of-type(1),
+.club-tbl td:nth-of-type(1) {
+  width: 80px;
+  @apply pl-4 truncate;
+}
+.club-tbl th:nth-of-type(2),
+.club-tbl td:nth-of-type(2) {
+  width: 150px;
+  @apply truncate;
+}
+.club-tbl th:nth-of-type(3),
+.club-tbl td:nth-of-type(3) {
+  width: 80px;
+}
+.club-tbl th:nth-of-type(4),
+.club-tbl td:nth-of-type(4) {
+  width: 100px;
+  @apply truncate;
+}
+.club-tbl th:nth-of-type(5),
+.club-tbl td:nth-of-type(5) {
+  width: 90px;
+}
+.club-tbl th:nth-of-type(6),
+.club-tbl td:nth-of-type(6) {
+  width: 90px;
+  @apply truncate;
+}
+.club-tbl th:nth-of-type(7),
+.club-tbl td:nth-of-type(7) {
+  width: 190px;
+}
+.club-tbl th:nth-of-type(8),
+.club-tbl td:nth-of-type(8) {
+  width: 90px;
+}
+
+/* Games Table */
+.games-tbl th:nth-of-type(1),
+.games-tbl td:nth-of-type(1) {
+  width: 60px;
+}
+.games-tbl th:nth-of-type(2),
+.games-tbl td:nth-of-type(2) {
+  width: 150px;
+  @apply pl-4 truncate;
+}
+.games-tbl th:nth-of-type(3),
+.games-tbl td:nth-of-type(3) {
+  width: 100px;
+}
+.games-tbl th:nth-of-type(4),
+.games-tbl td:nth-of-type(4) {
+  width: 100px;
+}
+.games-tbl th:nth-of-type(5),
+.games-tbl td:nth-of-type(5) {
+  width: 100px;
+  @apply truncate;
+}
+.games-tbl th:nth-of-type(6),
+.games-tbl td:nth-of-type(6) {
+  width: 75px;
+  @apply truncate;
+}
+.games-tbl th:nth-of-type(7),
+.games-tbl td:nth-of-type(7) {
+  width: 75px;
+  @apply truncate;
+}
+.games-tbl th:nth-of-type(8),
+.games-tbl td:nth-of-type(8) {
+  width: 75px;
+}
+.games-tbl th:nth-of-type(9),
+.games-tbl td:nth-of-type(9) {
+  width: 150px;
+}
+.games-tbl th:nth-of-type(10),
+.games-tbl td:nth-of-type(10) {
+  width: 100px;
+  @apply truncate;
+}
+.games-tbl th:nth-of-type(11),
+.games-tbl td:nth-of-type(11) {
+  width: 50px;
+}
+
+/* transaction-tbl */
+.transaction-tbl th:nth-of-type(1),
+.transaction-tbl td:nth-of-type(1) {
+  width: 60px;
+}
+.transaction-tbl th:nth-of-type(2),
+.transaction-tbl td:nth-of-type(2) {
+  width: 150px;
+  @apply pl-4 truncate;
+}
+.transaction-tbl th:nth-of-type(3),
+.transaction-tbl td:nth-of-type(3) {
+  width: 130px;
+  @apply truncate;
+}
+.transaction-tbl th:nth-of-type(4),
+.transaction-tbl td:nth-of-type(4) {
+  width: 150px;
+  @apply pl-4 truncate;
+}
+.transaction-tbl th:nth-of-type(5),
+.transaction-tbl td:nth-of-type(5) {
+  width: 150px;
+  @apply pl-4 truncate;
+}
+.transaction-tbl th:nth-of-type(6),
+.transaction-tbl td:nth-of-type(6) {
+  width: 120px;
+}
+.transaction-tbl th:nth-of-type(7),
+.transaction-tbl td:nth-of-type(7) {
+  width: 175px;
+  @apply pl-4 truncate;
+}
+.transaction-tbl th:nth-of-type(8),
+.transaction-tbl td:nth-of-type(8) {
+  width: 120px;
+}
+
+
+
+/* Other Things */
+.common-btn {
+  @apply text-16 text-black font-semibold bg-gradient-2 border-none transition-all ease-in border rounded-lg px-5 py-3 duration-200 hover:bg-primary-400 hover:text-secondary;
+}
+
+.common-btn-red {
+  @apply text-16 text-white font-semibold bg-red-700 border-none transition-all ease-in border rounded-lg px-5 py-3 duration-200 hover:bg-red-900 hover:text-white;
+}
+
+
+/* 
+.formInput{
+  @apply 
+} */
+.add-btn {
+  @apply text-16 text-black font-semibold bg-gradient-2 border-none transition-all ease-in border  duration-200 hover:bg-primary-400 hover:text-secondary;
+}
+.tab-btn {
+  @apply text-16 text-primary-400 font-semibold bg-black border-[1px] border-primary-400  transition-all ease-in  rounded-lg px-5 py-3 duration-200 hover:bg-secondary ;
+}
+
+.tab-btn-active {
+  @apply text-16 text-black font-semibold bg-gradient-2 border-[1px] border-primary-400  transition-all ease-in  rounded-lg px-5 py-3 duration-200 ;
+}
+
+.gradient-bg-2 {
+  background-image: linear-gradient(to right, #D4AC54, #FFDEAC, #E3BA5D);
+}
+
+
+/* DATE PICKER */
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.react-datepicker-wrapper input {
+  width: 100%;
+  background: transparent;
+  color: #fff;
+  @apply border border-primary-200 rounded-lg bg-black;
+}
+.react-datepicker__view-calendar-icon input {
+  padding: 12px;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Animation */
+.zoom-animation {
+  animation: zoom-anim 10s linear infinite;
+}
+
+@keyframes zoom-anim {
+  0%,
+  100% {
+    transform: scale(0.9);
+    transform-origin: bottom;
+  }
+  50% {
+    transform: scale(1.02);
+    transform-origin: bottom;
+  }
+}
+
+.apexcharts-text tspan {
+  font-family: inherit;
+  color: white !important;
+}
+.ql-toolbar.ql-snow {
+  @apply !border-primary-200 rounded-t-lg;
+}
+.ql-container.ql-snow {
+  @apply !border-primary-200 !text-white rounded-b-lg min-h-[200px];
+}
